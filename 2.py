@@ -11,7 +11,12 @@ Original file is located at
 # PART 1.1 : DATA LOADING
 # ==========================================================
 
-from IPython.display import display
+try:
+    from Ipython.display import display
+except ImportError:
+    import streamlit as st
+    def display(obj):
+        st.write(obj)
 
 import pandas as pd
 import numpy as np
